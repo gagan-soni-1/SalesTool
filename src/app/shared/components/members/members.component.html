@@ -1,0 +1,39 @@
+<div class="main-container">
+	<mat-card>
+		<mat-card-content>
+			<div>
+				<div>
+					<div class="add-members">
+						<button mat-raised-button (click)="addMember()">Add Member</button>
+					</div>
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Contact Number</th>
+							<th scope="col">Role</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (emp of employees; track emp.name; let i = $index) {
+						<tr>
+							<th scope="row">{{ i + 1 }}</th>
+							<td>
+
+								{{ emp.name }}
+							</td>
+							<td>{{ emp.email }}</td>
+							<td>{{ emp.contactNumber }}</td>
+							<td>{{ emp.role }}</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</div>

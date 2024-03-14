@@ -1,0 +1,60 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <div class="head">
+                <div>
+                    <button mat-button (click)="goBack()">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back_ios"></mat-icon>
+                      </button>
+                </div>
+                <div>
+                    <h5>Add Member</h5>
+                </div>
+            </div>
+           
+        </mat-card-header>
+        <mat-card-content>
+            <div class="add-form">
+                <form [formGroup]="memberForm" (ngSubmit)="addMember($event)">
+                    <div class="col-md-12 row">
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name"
+                              formControlName="name"  placeholder="Enter Name">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email"
+                            formControlName="email" placeholder="Enter email">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="number">Number</label>
+                            <input type="text" class="form-control" id="number"
+                            formControlName="contactNumber" placeholder="Enter Number">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group mb-3 col-md-6">
+                            <label for="number">Role</label>
+                            <select formControlName="role" type="text" class="form-control" id="number">
+                                <option value="" selected disabled hidden>Select Role</option>
+                                @for(role of roles;track roles){
+                                <option [value]="role">
+                                    {{role}}
+                                </option>  
+                                }
+                            </select>
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="col-md-12 form-action">
+                            <button mat-raised-button type="reset" (click)="cancel()" >Cancel</button>
+                            <button mat-raised-button >Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+       
+    </mat-card>
+</div>

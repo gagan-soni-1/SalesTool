@@ -1,0 +1,44 @@
+<div>
+	<mat-card>
+		<mat-card-content>
+			<div>
+				<div>
+					<div class="add-members">
+						<button mat-raised-button [routerLink]="['/portal/sales/project/add']">Add Project</button>
+					</div>
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Project Name</th>
+							<th scope="col">Project Type</th>
+							<th scope="col">Lead By</th>
+							<th scope="col">Managed By</th>
+                            <th scope="col">Client Name</th>
+                            <th scope="col">View/Edit</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (proj of projects; track proj.projectName; let i = $index) {
+						<tr>
+							<th scope="row">{{ i + 1 }}</th>
+							<td>{{ proj.projectName }}</td>
+							<td>{{ proj.projectType }}</td>
+							<td>{{ proj.leadBy }}</td>
+							<td>{{ proj.managedBy }}</td>
+							<td>{{ proj.clientName }}</td>
+							<td> 
+								<mat-icon class="icon">
+									visibility
+								</mat-icon>	
+							</td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</div>

@@ -1,0 +1,60 @@
+<div>
+	<mat-card>
+		<mat-card-content>
+			<div>
+				<div>
+					<div class="add-emp">
+                        <!-- Button for selecting file -->
+                        <label for="fileInput" class="buttonImport">
+                            + Import File
+                            <input id="fileInput" type="file" (change)="onFileChange($event)" accept=".xlsx,.xls" style="display: none;">
+                        </label>
+                    
+                        <!-- Button for adding employee -->
+                        <button mat-raised-button (click)="addEmployee()">Add Member</button>
+                    </div>
+                    
+				</div>
+
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Emp Code</th>
+							<th scope="col">Name</th>
+							<th scope="col">Experience</th>
+							<th scope="col">Salary Per Month</th>
+							<th scope="col">Technology</th>
+                            <th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (emp of employees; track emp.empCode; let i = $index) {
+						<tr>
+							<td scope="row">{{emp.empCode}}</td>
+							<td>{{ emp.Name }}</td>
+							<td>{{ emp.Experience }}</td>
+							<td>{{ emp.SalaryPerMonth }}</td>
+							<td>{{ emp.Technology }}</td>
+                            <td>
+                                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                  </button>
+                                  <mat-menu #menu="matMenu">
+                                    <button mat-menu-item>
+                                      <mat-icon>delete</mat-icon>
+                                      <span>Delete</span>
+                                    </button>
+                                    <button mat-menu-item disabled>
+                                      <mat-icon>edit</mat-icon>
+                                      <span>Edit</span>
+                                    </button>
+                                  </mat-menu>  
+                            </td>
+						</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</mat-card-content>
+	</mat-card>
+</div>

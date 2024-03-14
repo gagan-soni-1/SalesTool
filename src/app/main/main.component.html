@@ -1,0 +1,18 @@
+<div class="header-container">
+    <app-header (togglesidenav)="toggleSidenav()"></app-header>
+</div>
+<div class="view-container">
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer opened class="example-sidenav" mode="side">
+            <app-sidebar></app-sidebar>
+        </mat-drawer>
+
+        <div class="example-sidenav-content">
+            <div class="content-container">
+                <router-outlet />
+            </div>
+        </div>
+
+    </mat-drawer-container>
+
+</div>
