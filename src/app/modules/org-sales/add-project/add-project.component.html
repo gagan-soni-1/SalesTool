@@ -19,15 +19,15 @@
                 <form [formGroup]="projectForm">
                     <div class="col-md-12 row">
                         <div class="form-group mb-3 col-md-4">
-                            <label for="name">Project Name</label>
-                            <input type="text" class="form-control" id="name" formControlName="projectName"
-                                placeholder="Enter Project Name">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                        </div>
-                        <div class="form-group mb-3 col-md-4">
                             <label for="client">Client Name</label>
                             <input type="text" class="form-control" id="client" formControlName="clientName"
                                 placeholder="Enter Client Name">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group mb-3 col-md-4">
+                            <label for="name">Project Name</label>
+                            <input type="text" class="form-control" id="name" formControlName="projectName"
+                                placeholder="Enter Project Name">
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div class="form-group mb-3 col-md-4">
@@ -80,8 +80,18 @@
                                     <div class="emp-details1">
                                         
                                     <div class="emp-details2 mb-1 form-group">
-                                        <label for="eName">Employee Name</label>
-                                        <select formControlName="Name" id="eName" class="form-control"
+                                        <label for="eName-{{i}}">Selected Employee</label>
+                                        <select formControlName="selectedEmployeeName" id="eName-{{i}}" class="form-control"
+                                           >
+                                            <option value="" selected disabled hidden>Select Employee</option>
+                                            <option *ngFor="let employee of employees" [value]="employee.Name">
+                                                {{employee.Name}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="emp-details2 mb-1 form-group">
+                                        <label for="weName-{{i}}">Working Employee</label>
+                                        <select formControlName="workingEmployee" id="weName-{{i}}" class="form-control"
                                             (change)="employeeSelected($event,i)">
                                             <option value="" selected disabled hidden>Select Employee</option>
                                             <option *ngFor="let employee of employees" [value]="employee.Name">
@@ -91,20 +101,20 @@
                                     </div>
                                     <div class="emp-details2 mb-1 form-group">
                                         <label for="">Salary</label>
-                                        <input readonly type="text" class="form-control"
+                                        <input readonly type="number" class="form-control"
                                             formControlName="SalaryPerMonth">
                                     </div>
                                     <div class="emp-details2 mb-1 form-group">
                                         <label for="">Seating Cost</label>
-                                        <input type="text" class="form-control" formControlName="seatingCost">
+                                        <input type="number" class="form-control" formControlName="seatingCost" (focusout)="calculate(i)">
                                     </div>
                                     <div class="emp-details2 mb-1 form-group">
                                         <label for="">Other Cost</label>
-                                        <input type="text" class="form-control" formControlName="otherCost">
+                                        <input type="number" class="form-control" formControlName="otherCost" (focusout)="calculate(i)">
                                     </div>
                                     <div class="emp-details2 mb-1 form-group">
-                                        <label for="">Outsource Cost</label>
-                                        <input type="text" class="form-control" formControlName="outsourceCost">
+                                        <label for="">Client Rate</label>
+                                        <input type="number" class="form-control" formControlName="outsourceCost" (focusout)="calculate(i)">
                                     </div>
 
                                     </div>
@@ -117,14 +127,17 @@
                                         @if(emp.value.isTaxApplicable){
                                         <div class="emp-details2 form-group">
                                             <label for="">Tax(%)</label>
-                                            <input type="text" class="form-control" formControlName="taxPercantage"
+                                            <input type="number" (focusout)="calculate(i)" class="form-control" formControlName="taxPercantage"
                                                 placeholder="Tax(%)">
                                         </div>
                                         }
+                                        @if(emp.value.profit){
+                                            <div class="emp-details2 form-group">
+                                                <label for="">Profit:</label>&nbsp;<span>{{emp.value.profit}}</span>
+                                                
+                                            </div>
+                                            }
                                     </div>
-
-
-
                                     @if(allEmployees.length>1){
                                     <div>
                                         <div class="float-right">
@@ -142,8 +155,8 @@
                         </div>
 
                         <div class="col-md-12 form-action">
-                            <button mat-raised-button type="reset" (click)="cancel()">Cancel</button>
-                            <button mat-raised-button (click)="addProject($event)">Save</button>
+                            <button mat-raised-button type="reset" (click)="cancel($event)">Cancel</button>
+                            <button mat-raised-button class="add-proj-btn" (click)="addProject($event)">Save</button>
                         </div>
                     </div>
                 </form>

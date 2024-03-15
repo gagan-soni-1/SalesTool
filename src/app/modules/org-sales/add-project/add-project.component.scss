@@ -25,6 +25,10 @@
     background:map-get($common, button_background ) !important;
     color:map-get($common, button_text_color ) !important;
 }
+.add-proj-btn{
+    background:map-get($common, button_background ) !important;
+    color:map-get($common, button_text_color ) !important;
+}
 .emp-details0{
     background: map-get($common, emp_details_background );
     border-radius: 5px;
@@ -36,7 +40,7 @@
     display: flex;
 }
 .emp-details2{
-    width: 15%;
+    width: 17%;
     margin-right: 5px;
 }
 .add-emp-head{
