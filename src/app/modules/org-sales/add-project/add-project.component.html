@@ -18,19 +18,19 @@
             <div class="add-form">
                 <form [formGroup]="projectForm">
                     <div class="col-md-12 row">
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-3 col-md-4">
                             <label for="name">Project Name</label>
                             <input type="text" class="form-control" id="name" formControlName="projectName"
                                 placeholder="Enter Project Name">
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-3 col-md-4">
                             <label for="client">Client Name</label>
                             <input type="text" class="form-control" id="client" formControlName="clientName"
                                 placeholder="Enter Client Name">
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-3 col-md-4">
                             <label for="name">Project Type</label>
                             <select formControlName="projectType" class="form-control" id="projectType">
                                 <option value="" selected disabled hidden>Select Project Type</option>
@@ -43,7 +43,7 @@
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
 
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-3 col-md-4">
                             <label for="leadBy">Lead By</label>
                             <select formControlName="leadBy" class="form-control" id="leadBy">
                                 <option value="" selected disabled hidden>Select Lead</option>
@@ -56,7 +56,7 @@
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
 
-                        <div class="form-group mb-3 col-md-6">
+                        <div class="form-group mb-3 col-md-4">
                             <label for="managedBy">Managed By</label>
                             <select formControlName="managedBy" class="form-control" id="managedBy">
                                 <option value="" selected disabled hidden>Select Manager</option>
@@ -69,47 +69,54 @@
                             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                         </div>
                         <div>
-                            <div>
+                            <div class="add-emp-head mb-3">
                                 <div class="float-right">
-                                    <button mat-raised-button (click)="addEmployee()">Add Employees</button>
+                                    <button class="add-emp-btn" mat-raised-button (click)="addEmployee()">Add Employees</button>
                                 </div>
                             </div>
                             <ng-container formArrayName="employees">
                                 @for(emp of allEmployees.controls; track emp;let i=$index){
-                                <div class="col-md-12 row mb-3 border" [formGroupName]="i">
-                                    <div class="col-md-3 mb-3 form-group">
+                                <div class="col-md-12 row mb-3 emp-details0" [formGroupName]="i">
+                                    <div class="emp-details1">
+                                        
+                                    <div class="emp-details2 mb-1 form-group">
                                         <label for="eName">Employee Name</label>
-                                        <select formControlName="Name" id="eName" class="form-control" (change)="employeeSelected($event,i)">
+                                        <select formControlName="Name" id="eName" class="form-control"
+                                            (change)="employeeSelected($event,i)">
                                             <option value="" selected disabled hidden>Select Employee</option>
                                             <option *ngFor="let employee of employees" [value]="employee.Name">
                                                 {{employee.Name}}
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="col-md-3 mb-3 form-group">
+                                    <div class="emp-details2 mb-1 form-group">
                                         <label for="">Salary</label>
-                                        <input readonly type="text" class="form-control" formControlName="SalaryPerMonth">
+                                        <input readonly type="text" class="form-control"
+                                            formControlName="SalaryPerMonth">
                                     </div>
-                                    <div class="col-md-3 mb-3 form-group">
+                                    <div class="emp-details2 mb-1 form-group">
                                         <label for="">Seating Cost</label>
-                                        <input readonly type="text" class="form-control" formControlName="seatingCost">
+                                        <input type="text" class="form-control" formControlName="seatingCost">
                                     </div>
-                                    <div class="col-md-3 mb-3 form-group">
-                                        <label for="">Outsource Cost</label>
-                                        <input type="text" class="form-control" formControlName="outsourceCost">
-                                    </div>
-                                    <div class="col-md-3 mb-3 form-group">
+                                    <div class="emp-details2 mb-1 form-group">
                                         <label for="">Other Cost</label>
                                         <input type="text" class="form-control" formControlName="otherCost">
                                     </div>
+                                    <div class="emp-details2 mb-1 form-group">
+                                        <label for="">Outsource Cost</label>
+                                        <input type="text" class="form-control" formControlName="outsourceCost">
+                                    </div>
 
-                                    <div class="col-md-12 row mt-4">
-                                        <div class="col-md-3 form-group">
-                                            <input type="checkbox" class="" id="" formControlName="isTaxApplicable">
-                                            <label for="">Is tax applicable</label>
+                                    </div>
+                                    <div class="col-md-12 row mt-2">
+                                        <div class="emp-details2 form-group">
+                                            <input type="checkbox" class="" id="tax-{{i}}"
+                                                formControlName="isTaxApplicable">
+                                            <label for="tax-{{i}}">&nbsp; Is tax applicable</label>
                                         </div>
                                         @if(emp.value.isTaxApplicable){
-                                        <div class="col-md-3 form-group">
+                                        <div class="emp-details2 form-group">
+                                            <label for="">Tax(%)</label>
                                             <input type="text" class="form-control" formControlName="taxPercantage"
                                                 placeholder="Tax(%)">
                                         </div>
@@ -119,12 +126,12 @@
 
 
                                     @if(allEmployees.length>1){
-                                        <div>
-                                    <div class="float-right">
-                                        <button mat-raised-button (click)="removeEmployee(i)">Remove</button>
-                                    </div>
-
+                                    <div>
+                                        <div class="float-right">
+                                            <button mat-raised-button (click)="removeEmployee(i)">Remove</button>
                                         </div>
+
+                                    </div>
                                     }
 
                                 </div>

@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrl: './add-project.component.scss'
+  styleUrls: ['./add-project.component.scss','../../../shared/styles/common.scss']
 })
 export class AddProjectComponent {
   projectTypes: string[] = ['Short Term', 'Long Term'];
