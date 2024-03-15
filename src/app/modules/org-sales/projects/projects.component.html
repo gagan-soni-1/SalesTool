@@ -1,4 +1,4 @@
-<div>
+<div class="main-container">
 	<mat-card>
 		<mat-card-content>
 			<div>
@@ -30,7 +30,7 @@
 							<td>{{ proj.managedBy }}</td>
 							<td>{{ proj.clientName }}</td>
 							<td> 
-								<mat-icon class="icon">
+								<mat-icon class="icon" (click)="viewProject(proj)">
 									visibility
 								</mat-icon>	
 							</td>

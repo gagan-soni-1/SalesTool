@@ -3,37 +3,82 @@ import { Project } from "../../../models/project";
 export const PROJECTS:Project[]=[
     {
         projectName:'Project A',
-        projectType:'Type A',
+        projectType:'Short Term',
         leadBy:'A',
-        managedBy:'A',
+        managedBy:'X',
         clientName:'A',
+        employees:[{
+            Name:'',
+            SalaryPerMonth:'',
+            seatingCost:'',
+            outsourceCost:'',
+            otherCost:'',
+            isTaxApplicable:false,
+            taxPercantage:''
+          }]
     },
     {
         projectName:'Project B',
-        projectType:'Type B',
+        projectType:'Long Term',
         leadBy:'B',
-        managedBy:'B',
+        managedBy:'X',
         clientName:'B',
+        employees:[{
+            Name:'',
+            SalaryPerMonth:'',
+            seatingCost:'',
+            outsourceCost:'',
+            otherCost:'',
+            isTaxApplicable:false,
+            taxPercantage:''
+          }]
     },
     {
         projectName:'Project C',
-        projectType:'Type C',
+        projectType:'Short Term',
         leadBy:'C',
-        managedBy:'C',
+        managedBy:'Y',
         clientName:'C',
+        employees:[{
+            Name:'',
+            SalaryPerMonth:'',
+            seatingCost:'',
+            outsourceCost:'',
+            otherCost:'',
+            isTaxApplicable:false,
+            taxPercantage:''
+          }]
     },
     {
         projectName:'Project D',
-        projectType:'Type D',
+        projectType:'Short Term',
         leadBy:'D',
-        managedBy:'D',
+        managedBy:'Z',
         clientName:'D',
+        employees:[{
+            Name:'',
+            SalaryPerMonth:'',
+            seatingCost:'',
+            outsourceCost:'',
+            otherCost:'',
+            isTaxApplicable:false,
+            taxPercantage:''
+          }]
     },
     {
         projectName:'Project E',
-        projectType:'Type E',
+        projectType:'Long Term',
         leadBy:'E',
-        managedBy:'E',
+        managedBy:'X',
         clientName:'E',
+        employees:[{
+            Name:'',
+            SalaryPerMonth:'',
+            seatingCost:'',
+            outsourceCost:'',
+            otherCost:'',
+            isTaxApplicable:false,
+            taxPercantage:''
+          }]
     },
 ]

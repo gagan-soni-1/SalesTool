@@ -3,5 +3,7 @@ export interface Employee{
     Name:string;
     Experience:number; 
     SalaryPerMonth:number;
-    Technology:string[]
+    Technology:string;
+    outsourceCost?:number;
+    seatingCost?:number
 }

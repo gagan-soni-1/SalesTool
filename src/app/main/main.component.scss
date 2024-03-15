@@ -17,10 +17,10 @@
   }
   
   .view-container{
-    height: 90vh;;
+    height: calc(100vh - 64px);;
   }
   .header-container{
-    height: 10vh;
+    height: 64px;
   }
   .content-container{
     width: 100%;

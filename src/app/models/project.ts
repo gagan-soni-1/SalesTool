@@ -4,5 +4,5 @@ export interface Project{
     leadBy:string;
     managedBy:string;
     clientName:string;
-    employees?:[];
+    employees?:any[];
 }
