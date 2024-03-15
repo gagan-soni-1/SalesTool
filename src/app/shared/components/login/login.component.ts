@@ -19,6 +19,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
+      localStorage.setItem('token','true')
       if(this.loginForm.value.email == "hr@gmail.com"){
         this.router.navigate(['/portal/hr'])
       }else if(this.loginForm.value.email == "sales@gmail.com"){

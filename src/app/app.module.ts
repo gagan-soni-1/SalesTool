@@ -16,6 +16,7 @@ import { ResetPasswordComponent } from './shared/components/reset-password/reset
 import { UpdateProfileComponent } from './shared/components/update-profile/update-profile.component';
 import { SidebarComponent } from './shared/layout/sidebar/sidebar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './shared/components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ResetPasswordComponent,
     UpdateProfileComponent,
     SidebarComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

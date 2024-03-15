@@ -7,7 +7,8 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:50000,
         Technology:'JAVA',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject: true
     },
     {
         empCode:'emp02',
@@ -15,7 +16,8 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:50000,
         Technology:'JAVA,Angular',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject: false
     },
     {
         empCode:'emp03',
@@ -23,7 +25,35 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:50000,
         Technology:'ReactJS',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject:true
+    },
+    {
+        empCode:'emp04',
+        Name:'XY',
+        Experience:5,
+        SalaryPerMonth:50000,
+        Technology:'JAVA',
+        seatingCost:20000,
+        hasProject: true
+    },
+    {
+        empCode:'emp05',
+        Name:'YD',
+        Experience:5,
+        SalaryPerMonth:50000,
+        Technology:'JAVA,Angular',
+        seatingCost:20000,
+        hasProject: false
+    },
+    {
+        empCode:'emp06',
+        Name:'ZT',
+        Experience:5,
+        SalaryPerMonth:50000,
+        Technology:'ReactJS',
+        seatingCost:20000,
+        hasProject:true,
     },
     {
         empCode:'emp04',
@@ -31,7 +61,8 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:60000,
         Technology:'ReactJS',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject:true,
     },
     {
         empCode:'emp05',
@@ -39,7 +70,8 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:40000,
         Technology:'ReactJS',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject:true,
     },
     {
         empCode:'emp06',
@@ -47,6 +79,7 @@ export const EMPLOYEES:Employee[]=[
         Experience:5,
         SalaryPerMonth:35000,
         Technology:'ReactJS',
-        seatingCost:20000
+        seatingCost:20000,
+        hasProject:true,
     }
 ]

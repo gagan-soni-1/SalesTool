@@ -4,6 +4,7 @@ import { HomeComponent } from './shared/components/home/home.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { RegisterComponent } from './shared/components/register/register.component';
 import { MainComponent } from './main/main.component';
+import { AuthGuard } from '../app/services/auth.service';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path:'portal',
     component:MainComponent,
+    canActivate: [AuthGuard], // Protect this route
     children:[
       {
         path:'admin',loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)

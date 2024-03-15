@@ -3,6 +3,7 @@ import { UpdateProfileComponent } from '../../components/update-profile/update-p
 import { ResetPasswordComponent } from '../../components/reset-password/reset-password.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-header',
@@ -21,5 +22,6 @@ export class HeaderComponent {
   }
   logout(){
     this.route.navigate(['/']);
+    localStorage.clear();
   }
 }

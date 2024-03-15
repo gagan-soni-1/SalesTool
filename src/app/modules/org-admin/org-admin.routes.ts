@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router";
-import { DashboardComponent } from "./dashboard/dashboard.component";
 import { MembersComponent } from "../../shared/components/members/members.component";
 import { AddMemberComponent } from "../../shared/components/add-member/add-member.component";
+import { DashboardComponent } from "../../shared/components/dashboard/dashboard.component";
 
 export const orgAdminRoutes:Routes=[
     {

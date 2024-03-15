@@ -5,5 +5,6 @@ export interface Employee{
     SalaryPerMonth:number;
     Technology:string;
     outsourceCost?:number;
-    seatingCost?:number
+    seatingCost?:number;
+    hasProject?:boolean;
 }
