@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './update-profile.component.scss'
 })
 export class UpdateProfileComponent {
-
+  user = {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@example.com'
+  };
 }
