@@ -1,7 +1,9 @@
+@import '../../../shared/styles/theme.scss';
+
 .example-spacer {
     flex: 1 1 auto;
   }
   .mat-toolbar{
-    background: #c02026;
-    color: #ffffff;
+    background: map-get($common, header_color );
+    color: map-get($common, header_text);
 }

@@ -1,3 +1,6 @@
+
+@import '../../../shared/styles/theme.scss';
+
 .form-action{
     margin-top: 10px;
     display: flex;
@@ -17,4 +20,25 @@
 .float-right{
     width: fit-content;
     float: right;
+}
+.add-emp-btn{
+    background:map-get($common, button_background ) !important;
+    color:map-get($common, button_text_color ) !important;
+}
+.emp-details0{
+    background: map-get($common, emp_details_background );
+    border-radius: 5px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.emp-details1{
+    display: flex;
+}
+.emp-details2{
+    width: 15%;
+    margin-right: 5px;
+}
+.add-emp-head{
+ height: 30px;   
 }
