@@ -3,8 +3,12 @@ import { MembersComponent } from "../../shared/components/members/members.compon
 import { AddMemberComponent } from "../../shared/components/add-member/add-member.component";
 import { EmployeesComponent } from "../../shared/components/employees/employees.component";
 import { AddEmployeeComponent } from "../../shared/components/add-employee/add-employee.component";
+import { DashboardComponent } from "../../shared/components/dashboard/dashboard.component";
 
 export const HR_ROUTES:Routes = [
+    {
+        path:'',component:DashboardComponent
+    },
     {
         path:'members',component:MembersComponent
     },
