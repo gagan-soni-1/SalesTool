@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-update-profile',
@@ -6,9 +7,25 @@ import { Component } from '@angular/core';
   styleUrl: './update-profile.component.scss'
 })
 export class UpdateProfileComponent {
-  user = {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john.doe@example.com'
-  };
+  userForm!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.userForm = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      contactNum: ['', Validators.required],
+      designation: ['', Validators.required],
+    });
+  }
+
+  saveUser() {
+    if (this.userForm.valid) {
+      console.log(this.userForm.value);
+    } else {
+      alert("Form is invalid");
+    }
+  }
 }
