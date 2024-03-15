@@ -52,13 +52,15 @@ export class AddProjectComponent {
  
   get employee(){
     return this.fb.group({
-      Name:[''],
-      SalaryPerMonth:[''],
-      seatingCost:[''],
-      outsourceCost:[''],
-      otherCost:[''],
+      selectedEmployeeName:[''],
+      workingEmployee:[''],
+      SalaryPerMonth:[],
+      seatingCost:[],
+      outsourceCost:[],
+      otherCost:[],
       isTaxApplicable:[false],
-      taxPercantage:['']
+      taxPercantage:[],
+      profit:[]
     })
   }
 
@@ -70,24 +72,43 @@ export class AddProjectComponent {
     this.allEmployees.push(this.employee);
   }
 
-  removeEmployee(i:number){
+  removeEmployee(i:number):void{
     this.allEmployees.removeAt(i)
   }
 
-  employeeSelected(e:any,i:number){
+  employeeSelected(e:any,i:number):void{
     this.setEmployeeData(e?.target?.value,i)
   }
 
-  setEmployeeData(e:any,i:number){
+  setEmployeeData(e:any,i:number):void{
     let emp = this.employees.find(em=>em.Name == e)
     this.allEmployees.at(i).patchValue({
       SalaryPerMonth:emp?.SalaryPerMonth,
       seatingCost:emp?.seatingCost,
     })
+
+    this.calculate(i);
   }
 
-  cancel() {
-    this.projectForm.reset()
+  calculate(i:number):void{
+    let calcObj = this.allEmployees.at(i).value;
+    let profit:number = 0
+    if(calcObj.seatingCost && calcObj.otherCost && calcObj.outsourceCost ){
+      let employeeCost = calcObj.SalaryPerMonth+calcObj.seatingCost + calcObj.otherCost
+      if(calcObj.isTaxApplicable){
+        let afterTaxDeduction = calcObj.outsourceCost-(calcObj.outsourceCost*(calcObj.taxPercantage/100))
+        profit = afterTaxDeduction - employeeCost
+      } else {
+        profit = calcObj.outsourceCost - employeeCost
+      }
+      this.allEmployees.at(i).patchValue({profit:profit})
+    }
+  }
+
+  cancel(e:any) {
+    e.preventDefault();
+    // this.projectForm.reset()
+
   }
 
 }

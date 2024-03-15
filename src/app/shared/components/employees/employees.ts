@@ -24,5 +24,29 @@ export const EMPLOYEES:Employee[]=[
         SalaryPerMonth:50000,
         Technology:'ReactJS',
         seatingCost:20000
+    },
+    {
+        empCode:'emp04',
+        Name:'A',
+        Experience:5,
+        SalaryPerMonth:60000,
+        Technology:'ReactJS',
+        seatingCost:20000
+    },
+    {
+        empCode:'emp05',
+        Name:'B',
+        Experience:5,
+        SalaryPerMonth:40000,
+        Technology:'ReactJS',
+        seatingCost:20000
+    },
+    {
+        empCode:'emp06',
+        Name:'C',
+        Experience:5,
+        SalaryPerMonth:35000,
+        Technology:'ReactJS',
+        seatingCost:20000
     }
 ]
