@@ -1,4 +1,4 @@
-.dashboard {
+  .dashboard {
     padding: 20px;
     text-align: center;
   }
@@ -11,7 +11,7 @@
   }
   
   .card {
-    width: 250px;
+    width: 320px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -27,12 +27,18 @@
     color: white;
   }
   
-  .card-body {
-    padding: 20px;
+  .card-body{
+    display: flex;
   }
-  
-  .card-title {
-    margin: 0;
-    font-size: 24px;
+
+  .left-div{
+    background-color: #c02026; padding: 20px; display: flex; justify-content: center; align-items: center;
   }
-  
+
+  .right-div{
+    background-color: rgb(241, 236, 237); padding: 20px; display: flex; justify-content: center; align-items: center; width: 100%;
+  }
+
+  .card-icon{
+    color: white;
+  }
