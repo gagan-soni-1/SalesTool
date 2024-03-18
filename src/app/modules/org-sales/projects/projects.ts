@@ -8,13 +8,15 @@ export const PROJECTS:Project[]=[
         managedBy:'X',
         clientName:'A',
         employees:[{
-            Name:'',
+            selectedEmployeeName:'',
+            workingEmployee:'',
             SalaryPerMonth:'',
             seatingCost:'',
             outsourceCost:'',
             otherCost:'',
             isTaxApplicable:false,
-            taxPercantage:''
+            taxPercantage:'',
+            profit:''
           }]
     },
     {
@@ -24,13 +26,15 @@ export const PROJECTS:Project[]=[
         managedBy:'X',
         clientName:'B',
         employees:[{
-            Name:'',
+            selectedEmployeeName:'',
+            workingEmployee:'',
             SalaryPerMonth:'',
             seatingCost:'',
             outsourceCost:'',
             otherCost:'',
             isTaxApplicable:false,
-            taxPercantage:''
+            taxPercantage:'',
+            profit:''
           }]
     },
     {
@@ -40,13 +44,15 @@ export const PROJECTS:Project[]=[
         managedBy:'Y',
         clientName:'C',
         employees:[{
-            Name:'',
+            selectedEmployeeName:'',
+            workingEmployee:'',
             SalaryPerMonth:'',
             seatingCost:'',
             outsourceCost:'',
             otherCost:'',
             isTaxApplicable:false,
-            taxPercantage:''
+            taxPercantage:'',
+            profit:''
           }]
     },
     {
@@ -56,13 +62,15 @@ export const PROJECTS:Project[]=[
         managedBy:'Z',
         clientName:'D',
         employees:[{
-            Name:'',
+            selectedEmployeeName:'',
+            workingEmployee:'',
             SalaryPerMonth:'',
             seatingCost:'',
             outsourceCost:'',
             otherCost:'',
             isTaxApplicable:false,
-            taxPercantage:''
+            taxPercantage:'',
+            profit:''
           }]
     },
     {
@@ -72,13 +80,15 @@ export const PROJECTS:Project[]=[
         managedBy:'X',
         clientName:'E',
         employees:[{
-            Name:'',
+            selectedEmployeeName:'',
+            workingEmployee:'',
             SalaryPerMonth:'',
             seatingCost:'',
             outsourceCost:'',
             otherCost:'',
             isTaxApplicable:false,
-            taxPercantage:''
+            taxPercantage:'',
+            profit:''
           }]
     },
 ]

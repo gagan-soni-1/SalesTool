@@ -1,1 +1,73 @@
-<p>view-projects works!</p>
+<div class="main-container">
+	<mat-card>
+        <mat-card-header>
+            <div class="head">
+                <div>
+                    <button mat-button [routerLink]="['/portal/org-admin/projects']">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon"
+                            fontIcon="arrow_back_ios"></mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <h5>View Project Details</h5>
+                </div>
+            </div>
+
+        </mat-card-header>
+		<mat-card-content>
+			<div class="col-md-12 row" >
+                <div class="col-md-4 mb-3  proj-details-block" >
+                    <div class="title" >Client Name</div>
+                    <div class="info" >{{projDetails.clientName}}</div>
+                </div>
+                <div class="col-md-4 mb-3  proj-details-block" >
+                    <div class="title" >Project Name</div>
+                    <div class="info" >{{projDetails.projectName}}</div>
+                </div>
+                <div class="col-md-4 mb-3  proj-details-block" >
+                    <div class="title" >Project Type</div>
+                    <div class="info" >{{projDetails.projectType}}</div>
+                </div>
+                <div class="col-md-4 mb-3  proj-details-block" >
+                    <div class="title" >Lead By</div>
+                    <div class="info" >{{projDetails.leadBy}}</div>
+                </div>
+                <div class="col-md-4 mb-3  proj-details-block" >
+                    <div class="title" >Managed By</div>
+                    <div class="info" >{{projDetails.managedBy}}</div>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Selected Employee</th>
+                            <th>Working Employee</th>
+                            <th>Employee Salary</th>
+                            <th>Seating Cost</th>
+                            <th>Other Expenses</th>
+                            <th>Client Rate</th>
+                            <th>Tax(%)</th>
+                            <th>Profit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(emp of projDetails.employees;track emp){
+                            <tr>
+                                <td>{{emp.selectedEmployeeName || '-'}}</td>
+                                <td>{{emp.workingEmployee|| '-'}}</td>
+                                <td>{{emp.SalaryPerMonth|| '-'}}</td>
+                                <td>{{emp.seatingCost|| '-'}}</td>
+                                <td>{{emp.otherCost|| '-'}}</td>
+                                <td>{{emp.outsourceCost|| '-'}}</td>
+                                <td>{{emp.taxPercantage|| '-'}}</td>
+                                <td>{{emp.profit|| '-'}}</td>
+                            </tr>
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+		</mat-card-content>
+	</mat-card>
+</div>
