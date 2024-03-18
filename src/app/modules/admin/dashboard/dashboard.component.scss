@@ -1,0 +1,36 @@
+.dashboard {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 320px;
+    margin: 0px 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body{
+    display: flex;
+  }
+
+  .left-div{
+    background-color: #c02026; padding: 20px; display: flex; justify-content: center; align-items: center;
+  }
+
+  .right-div{
+    background-color: rgb(241, 236, 237); padding: 20px; display: flex; justify-content: center; align-items: center; width: 100%;
+  }
+
+  .card-icon{
+    color: white;
+  }

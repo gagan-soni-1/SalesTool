@@ -11,6 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
+import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import {MatSort, MatSortModule} from '@angular/material/sort';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
  const material=[
     MatButtonModule,
@@ -23,7 +27,11 @@ import {MatListModule} from '@angular/material/list';
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatTableModule, 
+    MatSortModule,
+    MatPaginatorModule,
+    MatSlideToggleModule
 ]
 
 @NgModule({
