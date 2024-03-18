@@ -15,7 +15,7 @@ export class HeaderComponent {
   constructor(private dialog:MatDialog, private route:Router){}
   openDialog(type:any):void{
     let component:any = type=='profile'?UpdateProfileComponent:type=='password'?ResetPasswordComponent:'';
-    this.dialog.open(component)
+    this.dialog.open(component,{ disableClose: true })
   }
   toggleSidenav(){
     this.togglesidenav.emit()
