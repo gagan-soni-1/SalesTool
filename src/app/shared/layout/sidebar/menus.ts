@@ -21,7 +21,7 @@ export const orgAdminMenu=[
     },
     {
         name:'Projects',
-        link:'',
+        link:'/portal/org-admin/projects',
     },
     {
         name:'Profit Margin',
