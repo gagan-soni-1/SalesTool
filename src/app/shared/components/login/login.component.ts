@@ -22,12 +22,16 @@ export class LoginComponent {
       localStorage.setItem('token','true')
       if(this.loginForm.value.email == "hr@gmail.com"){
         this.router.navigate(['/portal/hr'])
+        localStorage.setItem('role',btoa('hr'))
       }else if(this.loginForm.value.email == "sales@gmail.com"){
         this.router.navigate(['/portal/sales'])
+        localStorage.setItem('role',btoa('sales'))
       }else if(this.loginForm.value.email == "admin@gmail.com"){
         this.router.navigate(['/portal/admin'])
+        localStorage.setItem('role',btoa('admin'))
       }else if(this.loginForm.value.email == "orgadmin@gmail.com"){
         this.router.navigate(['/portal/org-admin'])
+        localStorage.setItem('role',btoa('org-admin'))
       }else{
         alert('No user found.');
       }

@@ -111,4 +111,8 @@ export class AddProjectComponent {
 
   }
 
+  ngOnDestroy(){
+    localStorage.removeItem('proj')
+  }
+
 }

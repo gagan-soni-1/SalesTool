@@ -1,1 +1,12 @@
-<p>sidebar here</p>
+<div>
+    <mat-nav-list>
+        @for (menu of menus; track menu) {
+          <mat-list-item (click)="openMenu(menu)" [ngClass]="menu.link === url?'activeMenu':''">
+             <!-- <a matListItemTitle ></a> -->
+            <div matListItemTitle class="menu-name">
+                {{ menu.name }}
+            </div>
+          </mat-list-item>
+        }
+      </mat-nav-list>
+</div>
