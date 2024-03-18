@@ -6,6 +6,7 @@ import { orgAdminRoutes } from './org-admin.routes';
 import { SharedModule } from '../../shared/modules/shared.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { ViewProjectsComponent } from './view-projects/view-projects.component';
+import { MaterialModule } from '../../shared/material/material.module';
 
 
 
@@ -18,8 +19,7 @@ import { ViewProjectsComponent } from './view-projects/view-projects.component';
   imports: [
     CommonModule,
     RouterModule.forChild(orgAdminRoutes),
-   
-    SharedModule
+    SharedModule, MaterialModule
   ]
 })
 export class OrgAdminModule { }
