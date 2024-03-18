@@ -1,0 +1,23 @@
+@import '../../../shared/styles/theme.scss';
+
+.mdc-list {
+    padding: 0;
+}
+
+mat-list-item {
+    border-radius: 5px;
+    height: 38px !important;
+    margin-bottom: 5px;
+}
+
+.activeMenu {
+    background: map-get($common , sidebar_active_menu_background);
+    .menu-name {
+        color: map-get($common , sidebar_active_menu_text);
+        font-weight: 500;
+    }
+}
+
+.menu-name {
+    // font-weight: 500;
+}
