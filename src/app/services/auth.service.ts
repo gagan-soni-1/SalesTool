@@ -20,8 +20,6 @@ export class AuthGuard implements CanActivate {
       // If user is authenticated, allow access
       return true;
     } else {
-      // For safety, you might also want to redirect to login or some fallback page
-      this.router.navigate(['/login']);
       return false;
     }
   }
