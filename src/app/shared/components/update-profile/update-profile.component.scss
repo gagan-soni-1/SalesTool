@@ -1,6 +1,3 @@
-container{
-    width: 500px;
-}
 .btn{
     background: #c02026 !important;
     color: #ffffff !important;
@@ -27,4 +24,8 @@ mat-form-field{
     color: #c02026 !important;
     border: 1px solid #c02026;
     margin: 0 10px;
+}
+.container {
+    width: 50vw; 
+    height: 90vh; 
 }
