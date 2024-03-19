@@ -6,8 +6,8 @@
     margin: 10px;
 }
 .rounded-circle{
-    width: 160px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 }
 mat-form-field{
     width: 100%;
@@ -25,7 +25,7 @@ mat-form-field{
     border: 1px solid #c02026;
     margin: 0 10px;
 }
-.container {
-    width: 50vw; 
-    height: 90vh; 
+
+.mat-mdc-dialog-content {
+    max-height: 85vh;
 }
