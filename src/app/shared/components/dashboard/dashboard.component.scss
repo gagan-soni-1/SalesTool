@@ -6,18 +6,10 @@
   .card-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
   }
-  
-  .card {
-    width: 300px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+   
   .card-body{
     display: flex;
   }
@@ -33,3 +25,37 @@
   .card-icon{
     color: white;
   }
+
+  .card {
+    flex: 1 1 calc(25% - 25px); 
+    max-width: calc(25% - 25px); 
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 1200px) {
+    .card {
+      flex: 1 1 calc(33.33% - 25px); 
+      max-width: calc(33.33% - 25px); 
+      margin-right: 20px; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 25px); 
+      max-width: calc(50% - 25px); 
+      margin-right: 15px; 
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      flex: 1 1 calc(100% - 20px); 
+      max-width: calc(100% - 20px); 
+      margin-right: 10px; 
+    }
+  }
+  
